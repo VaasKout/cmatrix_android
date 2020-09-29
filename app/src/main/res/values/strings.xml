@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cmatrix Android</string>
+    <string name="first_text">First Text</string>
+    <string name="second_text">Second Text</string>
+    <string name="show">Show</string>
+    <string name="third_text">Third Text</string>
+    <string name="fourth_text">Fourth Text</string>
+    <string name="fifth_text">Fifth Text</string>
+</resources>

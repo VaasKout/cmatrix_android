@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/firstColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/secondColumn"
+        style="@style/columnText" />
+    <TextView
+        android:id="@+id/thirdColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/fourthColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/fifthColumn"
+        style="@style/columnText" />
+    <TextView
+        android:id="@+id/sixthColumn"
+        style="@style/columnText" />
+    <TextView
+        android:id="@+id/seventhColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/eighthColumn"
+        style="@style/columnText" />
+    <TextView
+        android:id="@+id/ninthColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/tenthColumn"
+        style="@style/columnText"/>
+    <TextView
+        android:id="@+id/eleventhColumn"
+        style="@style/columnText"/>
+</LinearLayout>
