@@ -1,42 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp">
 
     <TextView
         android:id="@+id/firstColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/secondColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/secondColumn"
-        style="@style/columnText" />
+        style="@style/columnText"
+        app:layout_constraintEnd_toStartOf="@+id/thirdColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/firstColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/thirdColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fourthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/secondColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/fourthColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fifthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thirdColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/fifthColumn"
-        style="@style/columnText" />
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sixthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fourthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/sixthColumn"
-        style="@style/columnText" />
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seventhColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fifthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/seventhColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eighthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sixthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/eighthColumn"
-        style="@style/columnText" />
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ninthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/seventhColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/ninthColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tenthColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/eighthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tenthColumn"
-        style="@style/columnText"/>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eleventhColumn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ninthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/eleventhColumn"
-        style="@style/columnText"/>
-</LinearLayout>
+        style="@style/columnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tenthColumn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

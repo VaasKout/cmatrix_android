@@ -1,7 +1,6 @@
 package com.example.coroutinestest
 
 import android.widget.TextView
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -38,21 +37,13 @@ class MainViewModel(size: Int): ViewModel(){
         /**
          * two loops to avoid unknown symbols on screen
          */
-        for (b in 0..10){
-            ascii.add(10.toChar())
-        }
-        for (b in 0..10){
-            ascii.add(10.toChar())
-            ascii.add(b.toChar())
-        }
-        for (b in 0..10){
+        for (b in 0..20){
             ascii.add(10.toChar())
         }
         for (b in 32 until 64){
             ascii.add(10.toChar())
             ascii.add(b.toChar())
         }
-
         for (b in 64 until 96){
             ascii.add(10.toChar())
             ascii.add(b.toChar())
@@ -69,44 +60,30 @@ class MainViewModel(size: Int): ViewModel(){
 
 
 
-    private suspend fun updateFlow(index: Int,
-                                   delay: Long){
-        withContext(Dispatchers.Main){
+    private suspend fun updateFlow(index: Int, delay: Long){
+//        withContext(Dispatchers.Default) {
             val charText: MutableList<Char> = text.toMutableList()
             delay(delay)
-            while (true){
-            val asciiIterator = ascii.iterator()
-                while (asciiIterator.hasNext()){
-                    charText.removeLast()
-                    charText.add(0, asciiIterator.next())
-                    text = charText.toString()
-                    text = text.replace(",","")
-                    text = text.replace("[","")
-                    text = text.replace("]","")
-//                    text = "<font color=#1AFF00>${text.substring(0, text.length - 2)}</font> " +
-//                            "<font color=#FFFFFF>${text.substring(text.length - 1)}</font>"
-                    mutableLiveDataList[index].value = text
-                    delay(30)
+            while (true) {
+                val asciiIterator = ascii.iterator()
+                while (asciiIterator.hasNext()) {
+                            charText.removeLast()
+                            charText.add(0, asciiIterator.next())
+                            text = charText.toString()
+                            text = text.replace(",", "")
+                            text = text.replace("[", "")
+                            text = text.replace("]", "")
+                            mutableLiveDataList[index].postValue(text)
+                            delay(16)
+
                 }
-
-
-//                for (b in ascii){
-//                    charText.removeLast()
-//                    charText.add(0, b)
-//                    delay(30)
-//                    text = charText.toString()
-//                    text.replace(",","")
-//                    text.replace("[","")
-//                    text.replace("]","")
-//                    _columnText.value = text
-//                }
             }
-        }
+//        }
     }
 
     fun onUpdate(index: Int,
                  delay: Long){
-        uiScope.launch {
+        uiScope.launch(Dispatchers.Default){
             updateFlow(index, delay)
         }
     }

@@ -2,17 +2,15 @@ package com.example.coroutinestest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
+import android.view.View
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val firstColumn = findViewById<TextView>(R.id.firstColumn)
         val secondColumn = findViewById<TextView>(R.id.secondColumn)
@@ -28,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         val columns = listOf(firstColumn, secondColumn, thirdColumn,
             fourthColumn, fifthColumn, sixthColumn, seventhColumn,
-            eighthColumn, ninthColumn, tenthColumn, eleventhColumn)
+            eighthColumn, ninthColumn, tenthColumn, eleventhColumn,
+        )
 
         val viewModel =
             ViewModelProvider(this, MainViewModel.FACTORY(columns.size))
@@ -52,11 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         for (index in 0 until viewModel.mutableLiveDataList.size){
             viewModel.mutableLiveDataList[index].observe(this, {
-//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-//                    columns[index].text = Html.fromHtml(it, 0)
-//                } else{
                     columns[index].text = it
-//                }
             })
         }
     }
